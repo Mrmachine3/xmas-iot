@@ -12,7 +12,6 @@ try:
     print("Christmas lights: ON")
     relay.on()
     sleep(duration)
-    turn_off()
 except:
     KeyboardInterrupt
 
