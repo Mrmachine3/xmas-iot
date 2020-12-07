@@ -3,15 +3,10 @@
 AUDIOPATH=/home/mrmachine/xmas-iot/music
 SERVICE=omxplayer
 
-while true; do
-	if ps ax | grep -v grep | grep  > /dev/null
-	then
+for track in $AUDIOPATH/*.mp3
+do
+	clear
+	echo "Playing $(basename $track) ..."
+	$SERVICE -o local $track >/dev/null 2<&1
 	sleep 1;
-else
-	for track in $AUDIOPATH/*.mp3
-	do
-		clear
-		$SERVICE -o local $track & >/dev/null 2<&1
-	done
-fi
 done
