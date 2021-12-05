@@ -1,26 +1,25 @@
 #!/usr/bin/python3
 
-import argparse
 import sys
-#import gpiozero as gpio
-#from gpiozero import LED
+import gpiozero as gpio
+from gpiozero import LED
 from time import sleep
 import math
 
-#relay = LED(18,initial_value=True)
+relay = LED("GPIO18",initial_value=True)
 duration = int(43200)
 
 def lights_on():
     try:
         print("Christmas lights: ON")
-#        relay.on()
-#        sleep(duration)
+        relay.on()
+        sleep(duration)
     except:
         KeyboardInterrupt
 
 def lights_off():
     print("Christmas lights: OFF")
-#    relay.off()
+    relay.off()
 
 if __name__ == '__main__':
     status = sys.argv[1]
