@@ -11,7 +11,7 @@ IoT-based project repo for automation code to turn on/off christmas lights, musi
 - Raspberry Pi Case with exposed GPIO pins
 - Two (2) Female-to-male jumper wires (red & black)
 
-### GPIO Pinouts
+### GPIO Pinouts [^1]
 ![GPIO Pinout](https://user-images.githubusercontent.com/34361741/144728960-2cd4b6b4-2292-454d-ad31-eb245c8de8cf.png)
 
 ### Steps
@@ -31,3 +31,6 @@ sudo usermod -aG gpio <user name>
 0 10 * * 6-7 python3 /home/mrmachine/xmas-iot/lights_on.py >/dev/null 2<&1
 0 22 * * * python3 /home/mrmachine/xmas-iot/lights_off.py >/dev/null 2<&1
 ```
+
+---
+[^1]: [Raspberry Pi 4 Pins – Complete Practical Guide](https://roboticsbackend.com/raspberry-pi-3-pins/)
