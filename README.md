@@ -26,9 +26,10 @@ IoT-based project repo for automation code to turn on/off christmas lights, musi
 - Add crontab entries to set xmas light schedule. See example crontab below:
 
 ```bash
+@reboot python3 /opt/xmas-iot/lights.py on >/dev/null 2<&1
 0 17 * * 1-5 python3 /opt/xmas-iot/lights.py on >/dev/null 2<&1 # turn lights Mon-Fri at 5pm
 0 10 * * 6-7 python3 /opt/xmas-iot/lights.py on >/dev/null 2<&1 # turn lights Sat-Sun at 10am
-0 22 * * * python3 /opt/xmas-iot/lights.py off >/dev/null 2<&1 # turn lights off daily at 10pm
+0 21 * * 1-7 python3 /opt/xmas-iot/lights.py off >/dev/null 2<&1 # turn lights off daily at 9pm
 ```
 ### TO DO
 - [ ] Develop ansible playbook to execute these steps on remote host from control node
